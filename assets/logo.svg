@@ -1,0 +1,14 @@
+<svg width="520" height="160" viewBox="0 0 520 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="35" y1="20" x2="160" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9B35FF"/><stop offset="1" stop-color="#4169FF"/>
+    </linearGradient>
+  </defs>
+  <path d="M42 77C42 42 66 20 104 20H153C163 20 168 31 162 39L147 59H100C85 59 76 66 73 78L42 77Z" fill="url(#g)"/>
+  <path d="M167 82C167 117 143 140 105 140H56C46 140 41 129 47 121L62 101H109C124 101 133 94 136 82L167 82Z" fill="url(#g)"/>
+  <circle cx="91" cy="69" r="9" fill="url(#g)"/><circle cx="119" cy="69" r="9" fill="url(#g)"/>
+  <rect x="82" y="82" width="18" height="37" rx="9" fill="url(#g)"/><rect x="110" y="82" width="18" height="37" rx="9" fill="url(#g)"/>
+  <text x="188" y="108" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#11182D">Stamp</text>
+  <text x="405" y="108" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="url(#g)">ii</text>
+  <text x="455" y="108" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#11182D">o</text>
+</svg>
