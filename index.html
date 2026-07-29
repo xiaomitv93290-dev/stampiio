@@ -9,97 +9,323 @@
   <link rel="icon" href="assets/stampiio-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <header class="site-header" id="publicHeader">
-    <a class="brand" href="#accueil" aria-label="Stampiio, accueil"><img src="assets/stampiio-wordmark.png" alt="Stampiio"></a>
+    <a class="brand" href="#accueil" aria-label="Stampiio, accueil"><img src="assets/stampiio-horizontal.png" alt="Stampiio"></a>
     <nav class="desktop-nav" aria-label="Navigation principale">
-      <a href="#fonctionnalites">Fonctionnalités</a><a href="#comment-ca-marche">Comment ça marche</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#comment-ca-marche">Comment ça marche</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <div class="header-actions"><button class="btn btn-ghost" data-open="loginModal">Connexion</button><button class="btn btn-primary" data-demo="dashboard">Essayer gratuitement</button></div>
-    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    <div class="header-actions">
+      <button class="btn btn-ghost" data-open="loginModal">Connexion</button>
+      <button class="btn btn-primary" data-demo="dashboard">Essayer gratuitement</button>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i data-lucide="menu"></i></button>
   </header>
 
   <main id="publicSite">
     <section class="hero" id="accueil">
       <div class="hero-copy">
-        <div class="eyebrow">APPLE WALLET · GOOGLE WALLET · QR CODE</div>
+        <div class="eyebrow">Apple Wallet · Google Wallet · QR Code</div>
         <h1>La fidélité qui reste <span>dans la poche</span> de vos clients.</h1>
         <p>Créez votre programme en quelques minutes. Vos clients cumulent des points ou des tampons sans carte papier et sans application à télécharger.</p>
-        <div class="hero-actions"><button class="btn btn-primary btn-lg" data-demo="dashboard">Créer mon programme</button><button class="btn btn-secondary btn-lg" data-open="demoModal">Voir la démo</button></div>
-        <div class="trust-row"><span>✓ Mise en place rapide</span><span>✓ Sans engagement</span><span>✓ Support français</span></div>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" data-demo="dashboard">Créer mon programme</button>
+          <button class="btn btn-secondary btn-lg" data-open="demoModal">Voir la démo</button>
+        </div>
+        <div class="wallet-row">
+          <button class="wallet-brand-button" aria-label="Ajouter à Apple Wallet"><img src="assets/applewallet.png" alt="Ajouter à Apple Wallet"></button>
+          <button class="wallet-brand-button" aria-label="Payer avec Google Pay"><img src="assets/gpay.png" alt="Google Pay"></button>
+        </div>
+        <div class="trust-row">
+          <span><i data-lucide="check" class="trust-icon"></i> Mise en place rapide</span>
+          <span><i data-lucide="check" class="trust-icon"></i> Sans engagement</span>
+          <span><i data-lucide="check" class="trust-icon"></i> Support français</span>
+        </div>
       </div>
       <div class="hero-visual">
-        <div class="glow"></div>
-        <div class="phone">
-          <div class="phone-bar"></div>
-          <div class="wallet-card" id="heroCard">
-            <div class="card-head"><div><b>LE PETIT CAFÉ</b><small>CARTE DE FIDÉLITÉ</small></div><span class="cup">☕</span></div>
-            <div class="card-points"><small>VOS POINTS</small><strong>250</strong></div>
-            <div class="card-reward">Prochaine récompense <b>300 points</b></div>
-            <div class="barcode">▮▯▮▮▯▮▯▯▮▮▮▯▮▯▮</div>
+        <div class="hero-glow"></div>
+        <div class="phone-frame">
+          <img src="assets/iphone-frame.png" alt="iPhone" class="phone-img">
+          <div class="phone-screen">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div><strong>LE PETIT CAFÉ</strong><small>Carte de fidélité</small></div>
+                <div class="hero-card-icon"><i data-lucide="coffee"></i></div>
+              </div>
+              <div class="hero-card-body">
+                <small>Vos points</small>
+                <strong>250</strong>
+              </div>
+              <div class="hero-card-footer">
+                <span>Prochaine récompense</span>
+                <b>300 points</b>
+              </div>
+              <div class="hero-card-bar"></div>
+            </div>
           </div>
-          <button class="wallet-add"> Ajouter à Apple Wallet</button><button class="wallet-add google">G Ajouter à Google Wallet</button>
         </div>
-        <div class="floating-card fc1"><b>+50 points</b><span>Ajoutés aujourd’hui</span></div>
-        <div class="floating-card fc2"><b>Récompense disponible</b><span>1 boisson offerte</span></div>
+        <div class="hero-float hf1"><i data-lucide="plus-circle"></i><div><b>+50 points</b><span>Ajoutés aujourd'hui</span></div></div>
+        <div class="hero-float hf2"><i data-lucide="gift"></i><div><b>Récompense</b><span>1 boisson offerte</span></div></div>
       </div>
     </section>
 
-    <section class="metrics"><div><strong>2 min</strong><span>pour lancer son programme</span></div><div><strong>0</strong><span>application à installer</span></div><div><strong>24/7</strong><span>cartes accessibles</span></div><div><strong>100 %</strong><span>personnalisable</span></div></section>
+    <section class="metrics">
+      <div><strong>2 min</strong><span>pour lancer son programme</span></div>
+      <div><strong>0</strong><span>application à installer</span></div>
+      <div><strong>24/7</strong><span>cartes accessibles</span></div>
+      <div><strong>100 %</strong><span>personnalisable</span></div>
+    </section>
 
-    <section class="section" id="fonctionnalites"><div class="section-heading"><span>TOUT CE QU’IL VOUS FAUT</span><h2>Un programme simple pour vous et vos clients</h2><p>Stampiio réunit les outils essentiels pour créer, distribuer et suivre votre fidélité.</p></div>
+    <section class="section alt" id="fonctionnalites">
+      <div class="section-heading boxed">
+        <span>Tout ce qu'il vous faut</span>
+        <h2>Un programme simple pour vous et vos clients</h2>
+        <p>Stampiio réunit les outils essentiels pour créer, distribuer et suivre votre fidélité.</p>
+      </div>
       <div class="feature-grid">
-        <article class="feature-card"><i>◫</i><h3>Cartes Wallet</h3><p>Ajout en un clic dans Apple Wallet ou Google Wallet, sans téléchargement d’application.</p></article>
-        <article class="feature-card"><i>⌗</i><h3>QR code unique</h3><p>Chaque client dispose d’un identifiant sécurisé à présenter en caisse.</p></article>
-        <article class="feature-card"><i>✦</i><h3>Points ou tampons</h3><p>Choisissez la mécanique adaptée à votre commerce et modifiez vos règles facilement.</p></article>
-        <article class="feature-card"><i>⌁</i><h3>Scanner en caisse</h3><p>Vos employés scannent la carte depuis leur téléphone et créditent le client.</p></article>
-        <article class="feature-card"><i>↗</i><h3>Statistiques utiles</h3><p>Suivez les inscriptions, visites, récompenses et performances de votre programme.</p></article>
-        <article class="feature-card"><i>⚙</i><h3>Personnalisation</h3><p>Logo, couleurs, récompenses et conditions : votre carte respecte votre marque.</p></article>
+        <article class="feature-card"><div class="feature-icon"><i data-lucide="wallet"></i></div><h3>Cartes Wallet</h3><p>Ajout en un clic dans Apple Wallet ou Google Wallet, sans téléchargement d'application.</p></article>
+        <article class="feature-card"><div class="feature-icon"><i data-lucide="qr-code"></i></div><h3>QR code unique</h3><p>Chaque client dispose d'un identifiant sécurisé à présenter en caisse.</p></article>
+        <article class="feature-card"><div class="feature-icon"><i data-lucide="star"></i></div><h3>Points ou tampons</h3><p>Choisissez la mécanique adaptée à votre commerce et modifiez vos règles facilement.</p></article>
+        <article class="feature-card"><div class="feature-icon"><i data-lucide="scan-line"></i></div><h3>Scanner en caisse</h3><p>Vos employés scannent la carte depuis leur téléphone et créditent le client.</p></article>
+        <article class="feature-card"><div class="feature-icon"><i data-lucide="bar-chart-3"></i></div><h3>Statistiques utiles</h3><p>Suivez les inscriptions, visites, récompenses et performances de votre programme.</p></article>
+        <article class="feature-card"><div class="feature-icon"><i data-lucide="palette"></i></div><h3>Personnalisation</h3><p>Logo, couleurs, récompenses et conditions : votre carte respecte votre marque.</p></article>
       </div>
     </section>
 
-    <section class="section alt" id="comment-ca-marche"><div class="section-heading"><span>EN 3 ÉTAPES</span><h2>De l’inscription au premier client</h2></div>
-      <div class="steps"><article><b>01</b><h3>Configurez</h3><p>Ajoutez votre commerce, votre logo et choisissez points ou tampons.</p></article><article><b>02</b><h3>Diffusez</h3><p>Imprimez votre QR code ou partagez votre lien d’inscription.</p></article><article><b>03</b><h3>Fidélisez</h3><p>Scannez la carte du client, ajoutez ses gains et récompensez-le.</p></article></div>
+    <section class="section comparison-section reveal" aria-labelledby="comparisonTitle">
+      <div class="section-heading">
+        <span>Le digital au quotidien</span>
+        <h2 id="comparisonTitle">Pourquoi remplacer les cartes papier ?</h2>
+        <p>Une expérience plus simple pour vos clients et plus utile pour votre établissement.</p>
+      </div>
+      <div class="comparison-wrap" tabindex="0" aria-label="Comparatif entre carte papier et Stampiio">
+        <table class="comparison-table">
+          <thead><tr><th scope="col">Fonctionnalité</th><th scope="col">Carte papier</th><th scope="col">Stampiio</th></tr></thead>
+          <tbody id="comparisonRows"></tbody>
+        </table>
+      </div>
     </section>
 
-    <section class="section" id="tarifs"><div class="section-heading"><span>TARIFS TRANSPARENTS</span><h2>Une formule adaptée à chaque commerce</h2><p>14 jours d’essai gratuit. Aucun frais caché.</p></div>
+    <section class="section alt" id="comment-ca-marche">
+      <div class="section-heading">
+        <span>En 3 étapes</span>
+        <h2>De l'inscription au premier client</h2>
+      </div>
+      <div class="steps">
+        <article><div class="step-num">01</div><h3>Configurez</h3><p>Ajoutez votre commerce, votre logo et choisissez points ou tampons.</p></article>
+        <article><div class="step-num">02</div><h3>Diffusez</h3><p>Imprimez votre QR code ou partagez votre lien d'inscription.</p></article>
+        <article><div class="step-num">03</div><h3>Fidélisez</h3><p>Scannez la carte du client, ajoutez ses gains et récompensez-le.</p></article>
+      </div>
+    </section>
+
+    <section class="section roi-section reveal" id="rentabilite" aria-labelledby="roiTitle">
+      <div class="section-heading">
+        <span>Projection personnalisée</span>
+        <h2 id="roiTitle">Combien Stampiio peut vous rapporter ?</h2>
+        <p>Estimez en quelques secondes le potentiel de fidélisation de votre établissement.</p>
+      </div>
+      <div class="roi-calculator">
+        <form class="roi-controls" id="roiForm">
+          <label>Nombre de clients réguliers<input id="roiClients" type="number" min="1" step="1" value="250" inputmode="numeric"></label>
+          <label>Panier moyen (€)<input id="roiBasket" type="number" min="1" step="0.01" value="24" inputmode="decimal"></label>
+          <label>Nombre moyen de visites par an<input id="roiVisits" type="number" min="1" step="1" value="8" inputmode="numeric"></label>
+          <label class="roi-range-label" for="roiRate"><span>Taux estimé de retour grâce au programme de fidélité</span><output id="roiRateOutput" for="roiRate">15 %</output></label>
+          <input class="roi-range" id="roiRate" type="range" min="5" max="30" step="1" value="15">
+        </form>
+        <div class="roi-result" aria-live="polite">
+          <div class="roi-result-head"><i data-lucide="trending-up"></i><span>Potentiel annuel estimé</span></div>
+          <div class="roi-main-value"><strong id="roiRevenue">0 €</strong><span>de chiffre d'affaires supplémentaire</span></div>
+          <div class="roi-metrics">
+            <div><span>Clients fidélisés</span><strong id="roiExtraClients">0</strong></div>
+            <div><span>Visites supplémentaires</span><strong id="roiExtraVisits">0</strong></div>
+            <div><span>Gain annuel estimé</span><strong id="roiAnnualGain">0 €</strong></div>
+          </div>
+        </div>
+      </div>
+      <p class="roi-disclaimer"><i data-lucide="info"></i> Cette estimation est fournie à titre indicatif. Les résultats réels peuvent varier selon votre activité.</p>
+    </section>
+
+    <section class="section" id="tarifs">
+      <div class="section-heading">
+        <span>Tarifs transparents</span>
+        <h2>Une formule adaptée à chaque commerce</h2>
+        <p>14 jours d'essai gratuit. Puis 100 € de frais d'inscription uniques, en plus de l'abonnement choisi. Aucun autre frais caché.</p>
+      </div>
       <div class="pricing-grid">
-        <article class="price-card"><div class="plan-name">Essentiel</div><div class="price">19,90 €<small>/mois</small></div><p>Pour lancer simplement votre première carte.</p><ul><li>1 établissement</li><li>2 employés</li><li>500 membres</li><li>Apple et Google Wallet</li><li>Programme à tampons</li></ul><button class="btn btn-secondary full" data-demo="dashboard">Commencer</button></article>
-        <article class="price-card popular"><div class="popular-tag">LE PLUS CHOISI</div><div class="plan-name">Pro</div><div class="price">39,90 €<small>/mois</small></div><p>Pour développer activement votre fidélité.</p><ul><li>1 établissement</li><li>10 employés</li><li>5 000 membres</li><li>Points et tampons</li><li>Récompenses illimitées</li><li>Statistiques avancées</li></ul><button class="btn btn-primary full" data-demo="dashboard">Essayer Pro</button></article>
-        <article class="price-card"><div class="plan-name">Réseau</div><div class="price">79,90 €<small>/mois</small></div><p>Pour les enseignes et groupes multisites.</p><ul><li>Plusieurs établissements</li><li>Employés illimités</li><li>Import de clients</li><li>Statistiques par site</li><li>Support prioritaire</li></ul><button class="btn btn-secondary full" data-open="contactModal">Nous contacter</button></article>
+        <article class="price-card">
+          <div class="plan-name">Essentiel</div>
+          <div class="price">19,90 €<small>/mois</small></div>
+          <div class="signup-fee">+ <strong>100 €</strong> de frais d'inscription, payés <strong>une seule fois</strong></div>
+          <p>Pour lancer simplement votre première carte.</p>
+          <ul><li>1 établissement</li><li>2 employés</li><li>500 membres</li><li>Apple et Google Wallet</li><li>Programme à tampons</li></ul>
+          <button class="btn btn-secondary full pricing-cta" data-plan="Essentiel" data-price="19.90">Choisir Essentiel</button>
+        </article>
+        <article class="price-card popular">
+          <div class="popular-tag">Le plus choisi</div>
+          <div class="plan-name">Pro</div>
+          <div class="price">39,90 €<small>/mois</small></div>
+          <div class="signup-fee">+ <strong>100 €</strong> de frais d'inscription, payés <strong>une seule fois</strong></div>
+          <p>Pour développer activement votre fidélité.</p>
+          <ul><li>1 établissement</li><li>10 employés</li><li>5 000 membres</li><li>Points et tampons</li><li>Récompenses illimitées</li><li>Statistiques avancées</li></ul>
+          <button class="btn btn-primary full pricing-cta" data-plan="Pro" data-price="39.90">Essayer Pro</button>
+        </article>
+        <article class="price-card">
+          <div class="plan-name">Réseau</div>
+          <div class="price">79,90 €<small>/mois</small></div>
+          <div class="signup-fee">+ <strong>100 €</strong> de frais d'inscription, payés <strong>une seule fois</strong></div>
+          <p>Pour les enseignes et groupes multisites.</p>
+          <ul><li>Plusieurs établissements</li><li>Employés illimités</li><li>Import de clients</li><li>Statistiques par site</li><li>Support prioritaire</li></ul>
+          <button class="btn btn-secondary full pricing-cta" data-plan="Réseau" data-price="79.90">Choisir Réseau</button>
+        </article>
+      </div>
+      <div class="pricing-info" role="note">
+        <i data-lucide="info" aria-hidden="true"></i>
+        <p>Les frais d'inscription de <strong>100 €</strong> sont facturés une seule fois lors de l'activation du compte. Ils couvrent la configuration de votre espace, la personnalisation initiale de votre carte de fidélité et l'accompagnement au lancement.</p>
       </div>
     </section>
 
-    <section class="section alt testimonials"><div class="section-heading"><span>ILS NOUS FONT CONFIANCE</span><h2>Créé pour les commerces de proximité</h2></div><div class="testimonial-grid"><article><div class="stars">★★★★★</div><p>« Nos clients n’oublient plus leur carte et l’équipe a compris le scanner en quelques minutes. »</p><b>Sarah — Salon Bloom</b></article><article><div class="stars">★★★★★</div><p>« La mise en place est claire et le tableau de bord nous montre enfin qui revient réellement. »</p><b>Mehdi — Le Petit Café</b></article><article><div class="stars">★★★★★</div><p>« Plus propre que les cartes papier et beaucoup plus simple à gérer au quotidien. »</p><b>Lucas — Wash District</b></article></div></section>
+    <section class="section alt trust-section reveal" aria-labelledby="trustTitle">
+      <div class="section-heading compact-heading">
+        <span>Une solution fiable</span>
+        <h2 id="trustTitle">Conçu pour inspirer confiance</h2>
+      </div>
+      <div class="trust-grid" id="trustGrid"></div>
+    </section>
 
-    <section class="section faq" id="faq"><div class="section-heading"><span>QUESTIONS FRÉQUENTES</span><h2>Tout savoir avant de commencer</h2></div><div class="faq-list">
-      <details><summary>Mes clients doivent-ils installer une application ?</summary><p>Non. Ils ajoutent directement la carte à Apple Wallet, Google Wallet ou utilisent leur carte web.</p></details>
-      <details><summary>Est-ce compatible avec tous les commerces ?</summary><p>Oui, dès lors que vous avez des clients récurrents : restauration, coiffure, beauté, automobile, sport et commerce de proximité.</p></details>
-      <details><summary>Puis-je utiliser mon logo et mes couleurs ?</summary><p>Oui. Le programme, la carte et la page d’inscription sont personnalisables.</p></details>
-      <details><summary>Les intégrations Wallet sont-elles déjà réelles dans cette démo ?</summary><p>Cette version présente l’interface complète. La génération réelle nécessite ensuite les certificats Apple Developer et l’accès Google Wallet Issuer.</p></details>
-    </div></section>
+    <section class="section alt testimonials">
+      <div class="section-heading">
+        <span>Ils nous font confiance</span>
+        <h2>Créé pour les commerces de proximité</h2>
+      </div>
+      <div class="testimonial-grid">
+        <article><div class="stars">★★★★★</div><p>« Nos clients n'oublient plus leur carte et l'équipe a compris le scanner en quelques minutes. »</p><b>Sarah — Salon Bloom</b></article>
+        <article><div class="stars">★★★★★</div><p>« La mise en place est claire et le tableau de bord nous montre enfin qui revient réellement. »</p><b>Mehdi — Le Petit Café</b></article>
+        <article><div class="stars">★★★★★</div><p>« Plus propre que les cartes papier et beaucoup plus simple à gérer au quotidien. »</p><b>Lucas — Wash District</b></article>
+      </div>
+    </section>
 
-    <section class="cta"><img src="assets/stampiio-wordmark.png" alt=""><h2>Prêt à faire revenir vos clients ?</h2><p>Créez votre programme Stampiio et testez l’expérience complète.</p><button class="btn btn-light btn-lg" data-demo="dashboard">Démarrer gratuitement</button></section>
+    <section class="section faq" id="faq">
+      <div class="section-heading">
+        <span>Questions fréquentes</span>
+        <h2>Tout savoir avant de commencer</h2>
+      </div>
+      <div class="faq-list premium-faq" id="premiumFaq"></div>
+    </section>
+
+    <section class="cta">
+      <h2>Prêt à faire revenir vos clients ?</h2>
+      <p>Créez votre programme Stampiio et testez l'expérience complète.</p>
+      <button class="btn btn-light btn-lg" data-demo="dashboard">Démarrer gratuitement</button>
+    </section>
   </main>
 
-  <footer id="publicFooter"><div class="footer-brand"><img src="assets/stampiio-wordmark.png" alt="Stampiio"><p>La fidélité nouvelle génération pour les commerces de proximité.</p></div><div><b>Produit</b><a href="#fonctionnalites">Fonctionnalités</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a></div><div><b>Entreprise</b><a href="#">À propos</a><a href="#">Contact</a><a href="#">Partenaires</a></div><div><b>Légal</b><a href="#">CGV</a><a href="#">Confidentialité</a><a href="#">Mentions légales</a></div><small>© 2026 Stampiio. Tous droits réservés.</small></footer>
+  <footer id="publicFooter">
+    <div class="footer-brand">
+      <img src="assets/stampiio-horizontal-light.png" alt="Stampiio" loading="lazy">
+      <p>La fidélité nouvelle génération pour les commerces de proximité.</p>
+    </div>
+    <div><b>Produit</b><a href="#fonctionnalites">Fonctionnalités</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a></div>
+    <div><b>Entreprise</b><a href="#">À propos</a><a href="#">Contact</a><a href="#">Partenaires</a></div>
+    <div><b>Légal</b><a href="#">CGV</a><a href="#">Confidentialité</a><a href="#">Mentions légales</a></div>
+    <small>© 2026 Stampiio. Tous droits réservés.</small>
+  </footer>
 
   <section id="appShell" class="app-shell hidden">
-    <aside class="sidebar"><a class="side-brand" href="#"><img src="assets/stampiio-wordmark.png" alt="Stampiio"></a><div class="merchant"><div class="merchant-icon">☕</div><div><b>Le Petit Café</b><span>Compte Pro</span></div></div>
-      <nav id="appNav"><button class="active" data-view="dashboard"><i>⌂</i>Tableau de bord</button><button data-view="customers"><i>♙</i>Clients</button><button data-view="transactions"><i>↔</i>Transactions</button><button data-view="rewards"><i>◇</i>Récompenses</button><button data-view="program"><i>▣</i>Ma carte</button><button data-view="scanner"><i>⌗</i>Scanner</button><button data-view="employees"><i>♧</i>Employés</button><button data-view="settings"><i>⚙</i>Paramètres</button></nav>
-      <button class="logout" id="logoutBtn">← Retour au site</button>
+    <aside class="sidebar">
+      <a class="side-brand" href="#"><img src="assets/stampiio-horizontal-light.png" alt="Stampiio" loading="lazy"></a>
+      <div class="merchant">
+        <div class="merchant-icon"><i data-lucide="coffee"></i></div>
+        <div><b>Le Petit Café</b><span>Compte Pro</span></div>
+      </div>
+      <nav id="appNav">
+        <button class="active" data-view="dashboard"><i data-lucide="layout-dashboard"></i>Tableau de bord</button>
+        <button data-view="customers"><i data-lucide="users"></i>Clients</button>
+        <button data-view="transactions"><i data-lucide="arrow-left-right"></i>Transactions</button>
+        <button data-view="rewards"><i data-lucide="gift"></i>Récompenses</button>
+        <button data-view="program"><i data-lucide="credit-card"></i>Ma carte</button>
+        <button data-view="scanner"><i data-lucide="scan-line"></i>Scanner</button>
+        <button data-view="employees"><i data-lucide="users-round"></i>Employés</button>
+        <button data-view="settings"><i data-lucide="settings"></i>Paramètres</button>
+      </nav>
+      <button class="logout" id="logoutBtn"><i data-lucide="arrow-left"></i> Retour au site</button>
     </aside>
-    <div class="app-main"><header class="app-top"><button class="mobile-side" id="mobileSide">☰</button><div><span id="appCrumb">Tableau de bord</span></div><div class="app-user"><button class="icon-btn">🔔</button><div class="avatar">YS</div><span>Yasine</span></div></header><div id="viewContainer"></div></div>
+    <div class="app-main">
+      <header class="app-top">
+        <button class="mobile-side" id="mobileSide"><i data-lucide="menu"></i></button>
+        <div><span id="appCrumb">Tableau de bord</span></div>
+        <div class="app-user">
+          <button class="icon-btn"><i data-lucide="bell"></i></button>
+          <div class="avatar">YS</div>
+          <span>Yasine</span>
+        </div>
+      </header>
+      <div id="viewContainer"></div>
+    </div>
   </section>
 
-  <div class="modal" id="loginModal"><div class="modal-card"><button class="modal-close">×</button><img src="assets/stampiio-wordmark.png" alt="Stampiio"><h2>Connexion commerçant</h2><p>Accédez à votre espace de gestion.</p><form id="loginForm"><label>E-mail<input type="email" value="demo@stampiio.fr" required></label><label>Mot de passe<input type="password" value="demo1234" required></label><button class="btn btn-primary full">Se connecter</button></form><small>Compte de démonstration prérempli.</small></div></div>
-  <div class="modal" id="demoModal"><div class="modal-card wide"><button class="modal-close">×</button><h2>Découvrez Stampiio en 45 secondes</h2><div class="demo-preview"><img src="assets/stampiio-wordmark.png" alt=""><div><b>Une carte. Un scan. Une récompense.</b><p>Cette démonstration vous ouvre directement le tableau de bord avec des données d’exemple modifiables.</p></div></div><button class="btn btn-primary full" data-demo="dashboard">Ouvrir la démonstration</button></div></div>
-  <div class="modal" id="contactModal"><div class="modal-card"><button class="modal-close">×</button><h2>Parler à Stampiio</h2><form id="contactForm"><label>Nom<input required></label><label>E-mail<input type="email" required></label><label>Votre besoin<textarea rows="4" required></textarea></label><button class="btn btn-primary full">Envoyer</button></form></div></div>
+  <div class="modal" id="loginModal">
+    <div class="modal-card">
+      <button class="modal-close"><i data-lucide="x"></i></button>
+      <img src="assets/stampiio-horizontal.png" alt="Stampiio" loading="lazy">
+      <h2>Connexion commerçant</h2>
+      <p>Accédez à votre espace de gestion.</p>
+      <form id="loginForm">
+        <label>E-mail<input type="email" value="demo@stampiio.fr" required></label>
+        <label>Mot de passe<input type="password" value="demo1234" required></label>
+        <button class="btn btn-primary full">Se connecter</button>
+      </form>
+      <small>Compte de démonstration prérempli.</small>
+    </div>
+  </div>
+  <div class="modal" id="demoModal">
+    <div class="modal-card wide">
+      <button class="modal-close"><i data-lucide="x"></i></button>
+      <h2>Découvrez Stampiio en 45 secondes</h2>
+      <div class="demo-preview">
+        <img src="assets/stampiio-horizontal.png" alt="" loading="lazy">
+        <div><b>Une carte. Un scan. Une récompense.</b><p>Cette démonstration vous ouvre directement le tableau de bord avec des données d'exemple modifiables.</p></div>
+      </div>
+      <button class="btn btn-primary full" data-demo="dashboard">Ouvrir la démonstration</button>
+    </div>
+  </div>
+  <div class="modal" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close"><i data-lucide="x"></i></button>
+      <h2>Parler à Stampiio</h2>
+      <form id="contactForm">
+        <label>Nom<input required></label>
+        <label>E-mail<input type="email" required></label>
+        <label>Votre besoin<textarea rows="4" required></textarea></label>
+        <button class="btn btn-primary full">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card checkout-card">
+      <button class="modal-close"><i data-lucide="x"></i></button>
+      <span class="checkout-eyebrow">Récapitulatif avant paiement</span>
+      <h2>Formule <span id="checkoutPlan">Pro</span></h2>
+      <p>Votre abonnement commence après les 14 jours d'essai gratuit.</p>
+      <div class="checkout-summary">
+        <div><span>Frais d'inscription<small>Paiement unique</small></span><strong>100,00 €</strong></div>
+        <div><span>Abonnement mensuel<small>Après les 14 jours d'essai</small></span><strong id="checkoutMonthly">39,90 €/mois</strong></div>
+        <div class="checkout-total"><span>Total dû aujourd'hui<small>Les frais d'inscription ne seront plus refacturés</small></span><strong>100,00 €</strong></div>
+        <div><span>Prochain prélèvement mensuel<small id="checkoutNextDate"></small></span><strong id="checkoutNextAmount">39,90 €</strong></div>
+      </div>
+      <button class="btn btn-primary full" id="confirmCheckout">Continuer vers le paiement</button>
+      <small class="checkout-legal"><i data-lucide="shield-check"></i> Les frais d'inscription sont distincts de l'abonnement mensuel.</small>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
